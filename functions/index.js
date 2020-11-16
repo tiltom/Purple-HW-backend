@@ -41,7 +41,7 @@ app.post('/api/convert', (req, res) => {
 
             const result = conversionService.getConversionResult(json, amount, from, to);
 
-            statisticsService.updateAllStatistics(result.conversionUsdValue, from);
+            statisticsService.updateAllStatistics(result.conversionUsdValue, to);
 
             return res.status(200).send({ result: result.conversionValue });
         } catch (error) {

@@ -2,15 +2,15 @@ const firebaseService = require('./Firebase');
 const db = firebaseService.db;
 const statisticsConfig = require("../config/statistics.json");
 
-exports.updateAllStatistics = (conversionUsdValue, baseCurrency) => {
-    updateCurrencyConvertedUsdValue(conversionUsdValue, baseCurrency);
+exports.updateAllStatistics = (conversionUsdValue, destinationCurrency) => {
+    updateCurrencyConvertedUsdValue(conversionUsdValue, destinationCurrency);
     updateTotalUsdConverted(conversionUsdValue);
     updateTotalConversions();
 }
 
-const updateCurrencyConvertedUsdValue = (conversionUsdValue, sourceCurrency) => {
+const updateCurrencyConvertedUsdValue = (conversionUsdValue, destinationCurrency) => {
     (async () => {
-        const document = db.collection(statisticsConfig.most_converted_collection_path).doc(sourceCurrency);
+        const document = db.collection(statisticsConfig.most_converted_collection_path).doc(destinationCurrency);
         const item = await document.get();
 
         if (item.exists) {
