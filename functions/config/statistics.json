@@ -1,0 +1,8 @@
+{
+  "total_usd_collection_path": "statistics",
+  "total_usd_document_path": "totalUsdConverted",
+  "total_usd_result_field": "totalInUsd",
+  "most_converted_collection_path": "convertedInCurrencies",
+  "total_conversions_collection_path": "statistics",
+  "total_conversions_document_path": "totalConversions"
+}

@@ -1,0 +1,6 @@
+{
+  "convert_api_base_url": "https://free.currconv.com/api/v7",
+  "convert_api_key": "b194deee1ec455725cec",
+  "convert_api_convert_endpoint": "/convert",
+  "convert_api_currencies_list_endpoint": "/currencies"
+}
