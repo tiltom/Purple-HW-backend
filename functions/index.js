@@ -19,7 +19,6 @@ app.get('/api/currencies', (req, res) => {
 
             return res.status(200).send(conversionService.getListOfCurrencies(json));
         } catch (error) {
-            console.log(error);
             return res.status(500).send(error);
         }
     })();
@@ -37,7 +36,6 @@ app.post('/api/convert', (req, res) => {
 
             const response = await fetch(conversionService.getConvertEndpointUrl(from, to))
             const json = await response.json();
-            console.log(validationResult);
 
             const result = conversionService.getConversionResult(json, amount, from, to);
 

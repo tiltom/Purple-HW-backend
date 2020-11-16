@@ -24,7 +24,7 @@ exports.getConvertEndpointUrl = (sourceCurrency, destinationCurrency) => {
 
 exports.getConversionResult = (document, amount, sourceCurrency, destinationCurrency) => {
     const conversionValue = getConversionResult(document, amount, sourceCurrency, destinationCurrency);
-    const conversionUsdValue = getConversionResult(document, amount, destinationCurrency, "USD");
+    const conversionUsdValue = getConversionResult(document, amount, sourceCurrency, "USD");
 
     return { conversionValue: utils.roundToTwoDecimals(conversionValue), conversionUsdValue };
 }
